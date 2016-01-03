@@ -17,7 +17,7 @@ npm run dev
 ```
 or
 ```
-npm run build
+npm start
 ```
 
 Features
@@ -25,6 +25,7 @@ Features
 
 * [x] [NodeJS](https://nodejs.org/) and [Express](http://expressjs.com/)
 * [x] [multer](https://www.npmjs.com/package/multer/) for image upload
+* [x] jQuery is used only to send upload request without reloading the page
 * [x] [Bootstrap](http://getbootstrap.com/) framework for minimal UI
 * [x] ES6 syntax with [Babel](https://babeljs.io/)
 * [x] Client side processing
