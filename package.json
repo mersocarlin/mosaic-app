@@ -4,8 +4,11 @@
   "description": "Mosaic App",
   "author": "Hemerson Carlin <mersocarlin@gmail.com>",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node -r 'babel-core/register' src/server.js"
+    "start": "npm run build-back && npm run build-front && node lib/server.js",
+    "build": "npm run build-back && npm run build-front",
+    "build-back": "./node_modules/.bin/babel src -d lib",
+    "build-front": "./node_modules/.bin/babel app/ -o js/mosaic.js",
+    "dev": "npm run build-front && node -r 'babel-core/register' src/server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
