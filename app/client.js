@@ -1,6 +1,8 @@
 
 const TILE_WIDTH = 16;
 const TILE_HEIGHT = 16;
+const EXT_REGEX = /(?:\.([^.]+))?$/;
+const VALID_EXT = ['png', 'jpg', 'jpeg'];
 
 class Client {
   constructor () {
@@ -29,10 +31,17 @@ class Client {
       $input.trigger('fileselect', [numFiles, label]);
     });
 
-    // $('.btn-file :file').on('fileselect', (event, numFiles, label) => {
-    //   console.log(numFiles);
-    //   console.log(label);
-    // });
+    $('.btn-file :file').on('fileselect', (event, numFiles, label) => {
+      const { htmlHelper } = this;
+      const btnProcess = document.getElementById('btnProcess');
+      const ext = EXT_REGEX.exec(label)[1];
+
+      btnProcess.removeAttribute('disabled');
+
+      if (VALID_EXT.indexOf(ext) === -1) {
+        btnProcess.setAttributeNode(htmlHelper.createAttribute('disabled', 'disabled'));
+      }
+    });
   }
 
   setupUploadFormSubmit () {
