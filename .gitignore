@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
-*.log
+npm-debug.log
+*.bak
+lib
+uploads
+js/mosaic.js
