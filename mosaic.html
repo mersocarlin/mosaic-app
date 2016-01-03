@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="js/mosaic.js"></script>
-    <script type="text/javascript" src="js/client.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Mosaic</title>
   </head>
   <body>
-    <!-- Edit me. -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Mosaic App</h1>
+      </div>
+
+      <p class="lead">Image to mosaic</p>
+      <p>Browse image, Upload & Process and wait for the result.</p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <form
+            id="uploadForm"
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data">
+
+            <span class="btn btn-default btn-sm btn-file pull-left">
+              Browse image
+              <input type="file" id="fileMosaic" name="fileMosaic">
+            </span>
+
+            <input
+              type="submit"
+              class="btn btn-primary btn-sm pull-right"
+              value="Upload & Process Image"
+            />
+
+            <div class="clearfix"></div>
+          </form>
+        </div>
+        <div class="panel-body">
+          <img id="img" class="img-responsive" src="" />
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Result
+        </div>
+        <div class="panel-body">
+          <div id="tiles"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/plugins/jquery.js"></script>
+    <script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/plugins/color-thief.js"></script>
+    <script src="js/mosaic.js"></script>
+    <script>
+      var client = new Client();
+    </script>
   </body>
 </html>
