@@ -1,0 +1,11 @@
+{
+  "name": "mosaic-app",
+  "version": "1.0.0",
+  "description": "Mosaic App",
+  "author": "Hemerson Carlin <mersocarlin@gmail.com>",
+  "name": "mosaic",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
